@@ -4,11 +4,11 @@ default: &default
 
 development:
   <<: *default
-  database: niceretro_development.sqlite3
+  database: db/niceretro_development.sqlite3
 
 test:
   <<: *default
-  database: niceretro_test.sqlite3
+  database: db/niceretro_test.sqlite3
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -22,7 +22,7 @@ test:
 # On Heroku and other platform providers, you may have a full connection URL
 # available as an environment variable. For example:
 #
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#   DATABASE_URL="postgres://myuser mypass@localhost/somedatabase"
 #
 # You can use this database configuration with:
 #
@@ -31,4 +31,4 @@ test:
 #
 production:
   <<: *default
-  url: <% ENV['DATABASE_URL'] || 'sqlite3:niceretro_production.sqlite3' %>
+  url: <% ENV['DATABASE_URL'] || 'sqlite3:db/niceretro_production.sqlite3' %>
