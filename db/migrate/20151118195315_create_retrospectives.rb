@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateRetrospectives < ActiveRecord::Migration[7.2]
   def change
     create_table :retrospectives do |t|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Retrospective < ActiveRecord::Base
   has_many :demands
   has_many :doubts, dependent: :destroy

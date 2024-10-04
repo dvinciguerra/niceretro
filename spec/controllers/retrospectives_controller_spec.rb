@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe RetrospectivesController do
-
   let(:retrospective) { Retrospective.create(title: 'retrotest', date: '25/11/2015', room: 4) }
 
   describe 'GET #index' do
@@ -29,7 +30,7 @@ describe RetrospectivesController do
   describe 'POST #create' do
     before do
       post :create,
-              retrospective: { title: 'retro1', date: '25/11/2015', room: 1 }
+           retrospective: { title: 'retro1', date: '25/11/2015', room: 1 }
     end
 
     it { is_expected.to redirect_to retrospectives_path }
@@ -48,8 +49,8 @@ describe RetrospectivesController do
   describe 'PUT #update' do
     before do
       put :update,
-              id: retrospective.id,
-              retrospective: { title: 'retro2', date: '25/11/2015', room: 1 }
+          id: retrospective.id,
+          retrospective: { title: 'retro2', date: '25/11/2015', room: 1 }
     end
 
     it 'should have the edited data' do

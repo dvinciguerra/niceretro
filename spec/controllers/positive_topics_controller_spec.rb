@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe PositiveTopicsController do
@@ -6,11 +8,11 @@ describe PositiveTopicsController do
   describe 'POST #create' do
     before do
       post :create,
-              positive_topic: { description:'positive_topic' },
-              retrospective_id: retrospective.id
+           positive_topic: { description: 'positive_topic' },
+           retrospective_id: retrospective.id
     end
 
-    it {is_expected.to redirect_to retrospective_path(retrospective.id) }
+    it { is_expected.to redirect_to retrospective_path(retrospective.id) }
   end
 
   describe 'DELETE #destroy' do

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DemandsController < ApplicationController
   before_action :get_retrospective_id
   respond_to :html, :js

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RetrospectivesController < ApplicationController
   def index
     @retrospectives = Retrospective.all
@@ -10,9 +12,9 @@ class RetrospectivesController < ApplicationController
   def create
     @retrospective = Retrospective.new(retrospectives_params)
 
-    if @retrospective.save
-      redirect_to retrospectives_path
-    end
+    return unless @retrospective.save
+
+    redirect_to retrospectives_path
   end
 
   def edit
@@ -32,9 +34,9 @@ class RetrospectivesController < ApplicationController
     @retrospective = Retrospective.find(params[:id])
     @retrospective.destroy
 
-    if @retrospective.destroyed?
-      redirect_to retrospectives_path
-    end
+    return unless @retrospective.destroyed?
+
+    redirect_to retrospectives_path
   end
 
   def show
